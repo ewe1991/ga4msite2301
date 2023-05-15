@@ -50,22 +50,54 @@
 			<a href="/" class="home-link">{{ metadata.title }}</a>
 
 			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-			<nav>
+			{# <nav>
 				<h2 class="visually-hidden">Top level navigation menu</h2>
 				<ul class="nav">
 				{%- for entry in collections.all | eleventyNavigation %}
 					<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
 				{%- endfor %}
 				</ul>
-			</nav>
+			</nav> #}
 		</header>
 
 		<main id="skip">
+
+			<h1>Video Tracking</h1>
+
+				<a href="#">New page</a>
+
+				<button id="video-01" class="video">Video 01</button>
+				<button id="video-01-01" class="video">Video 01-01</button>
+				<button id="video-01-02" class="video">Video 01-02</button>
+
+				<button id="video-02" class="video">Video 02</button>
+				<button id="video-02-01" class="video">Video 02-01</button>
+				<button id="video-02-02" class="video">Video 02-02</button>
+
 			{{ content | safe }}
 		</main>
 
-		<footer></footer>
+		<footer>
 
+		</footer>
+
+		<script>
+			// Listen for clicks on the entire window
+			document.addEventListener('click', function (event) {
+
+				// If the clicked element has the `.click-me` class, it's a match!
+				if (event.target.matches('.video')) {
+					// Do something...
+				
+				dataLayer.push({
+				event: "video_item_clicked", 
+				name: event.target.textContent                    
+				})
+				
+				}
+
+			});
+		</script>
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
 	</body>
 </html>
