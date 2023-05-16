@@ -99,7 +99,7 @@
 
 				<button type="submit" name="checkout" class="" data-ga="action_click_check_out"><span>Check Out</span></button>
 
-				<a href="/cart" data-ga="view_cart" class="inline-block text-center p-6">View Cart</a>
+				<a href="/cart" data-ga="action_click_cart">View Cart</a>
 
 
 				<details>
@@ -152,6 +152,16 @@
             				
 
 			</section>
+
+				<hr>
+			<section>
+				<h2>Job Tracking</h2>
+
+				<a href="/job-123" data-ga="action_click_job" aria-label="View {{ JOB_TITLE}}">View Job</a>
+
+				<a href="/job-123" data-ga="action_click_job_apply" aria-label="View {{ JOB_TITLE}}">View Job</a>
+
+				</section>
 
 			{{ content | safe }}
 		</main>
