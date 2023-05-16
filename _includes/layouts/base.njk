@@ -62,17 +62,96 @@
 
 		<main id="skip">
 
-			<h1>Video Tracking</h1>
+			<h1>Tracking</h1>
+
+			<section>
+				<h2>Video Tracking</h2>
 
 				<a href="#">New page</a>
 
-				<button id="video-01" class="video">Video 01</button>
-				<button id="video-01-01" class="video">Video 01-01</button>
-				<button id="video-01-02" class="video">Video 01-02</button>
+				<button id="video-01" class="video" data-ga="action_video_play">Video 01</button>
+				<button id="video-01-01" class="video" data-ga="action_video_play">Video 01-01</button>
+				<button id="video-01-02" class="video" data-ga="action_video_play">Video 01-02</button>
 
-				<button id="video-02" class="video">Video 02</button>
-				<button id="video-02-01" class="video">Video 02-01</button>
-				<button id="video-02-02" class="video">Video 02-02</button>
+				<button id="video-02" class="video" data-ga="action_video_play">Video 02</button>
+				<button id="video-02-01" class="video" data-ga="action_video_play">Video 02-01</button>
+				<button id="video-02-02" class="video" data-ga="action_video_play">Video 02-02</button>
+
+				<video width="320" height="240" controls data-ga="action_video" data-ga-title="Tennis">
+					<source src="https://assets.codepen.io/16721/video_tpb_tennis.mp4" type="video/mp4">
+				</video>
+
+				<video width="320" height="240" controls data-ga="action_video" data-ga-title="Touch">
+					<source src="https://assets.codepen.io/16721/video_tpb_touch.mp4" type="video/mp4">
+				</video>
+
+				<video width="320" height="240" controls data-ga="action_video" data-ga-title="Cake">
+					<source src="https://assets.codepen.io/16721/video_tpb_choc_cake.mp4" type="video/mp4">
+				</video>
+			</section>
+
+			<hr>
+
+			<section>
+				<h2>e-commmerce </h2>
+
+				<button type="submit" name="add" class="" data-ga="action_click_add_to_cart"><span>Add to cart</span></button>
+
+				<button type="submit" name="checkout" class="" data-ga="action_click_check_out"><span>Check Out</span></button>
+
+				<a href="/cart" data-ga="view_cart" class="inline-block text-center p-6">View Cart</a>
+
+
+				<details>
+                    <summary data-ga="expand_enquire_form">
+                      Enquire about this item
+                    </summary>
+                    <div>
+                    <form method="post" action="" id="EnquireForm" accept-charset="UTF-8" class="c-form isolate">
+
+						<fieldset class="mb-32">
+
+						<legend class="f-body mb-16 color-black visually-hidden">Your Contact Information</legend>
+
+						<div class="grid sm:grid-cols-2 gap-16 mb-16">
+
+							<input class="c-form__input" autocomplete="given-name" type="text" id="EnquireFrom-firstName" name="contact[First name]" value="" placeholder="First name">
+							<label class="visually-hidden" for="EnquireFrom-firstName">First name</label>
+
+							<input class="c-form__input" autocomplete="family-name" type="text" id="EnquireFrom-lastName" name="contact[Last name]" value="" placeholder="Last name">
+							<label class="visually-hidden" for="EnquireFrom-lastName">Last name</label>
+
+
+							<input autocomplete="email" type="email" id="EnquireFrom-email" class="c-form__input" name="contact[email]" spellcheck="false" autocapitalize="off" value="" aria-required="true" required="required" placeholder="Email">
+							<label class="visually-hidden" for="EnquireFrom-email">Email
+							<span aria-hidden="true">*</span>
+							</label><input type="tel" id="EnquireFrom-phone" class="c-form__input" autocomplete="tel" name="contact[Phone number]" pattern="[0-9\-]*" required="required" value="" placeholder="Phone number">
+							<label class="visually-hidden" for="EnquireFrom-phone">Phone number</label>
+						</div>
+
+						<div class="grid gap-16">
+							<input type="hidden" name="contact[product]" value="Teal Super Solar Ring">
+							<label class="visually-hidden" for="EnquireFrom-product">Teal Super Solar Ring</label>
+							<textarea rows="3" id="EnquireFrom-body" class="c-form__input" name="contact[If you’d like to provide any additional information please share it here:]" placeholder="If you’d like to provide any additional information please share it here:"></textarea>
+							<label class="visually-hidden" for="EnquireFrom-body">If you’d like to provide any additional information please share it here:</label>
+						</div>
+
+						</fieldset>
+
+						<div class="contact__button text-center mb-24">
+
+						<button type="submit" class="c-btn c-btn--center c-btn--primary f-btn" data-ga="action_submit_form_enquiry" name="action_submit_form_enquiry">
+							Send Enquiry
+						</button>
+
+						</div>
+					</div>
+					</form>
+                    </div>
+                  </details>
+            				
+
+			</section>
 
 			{{ content | safe }}
 		</main>
